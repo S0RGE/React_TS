@@ -1,0 +1,22 @@
+.main__input {
+  border: 1px solid #b3cdf8;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  min-width: 354px;
+  height: 56px;
+  padding: 16px;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23px;
+
+  &::placeholder {
+    color: #9f9f9f;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #5c98f1;
+  }
+}

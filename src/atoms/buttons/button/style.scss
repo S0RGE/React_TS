@@ -1,0 +1,19 @@
+.btn {
+  cursor: pointer;
+  width: 233px;
+  height: 56px;
+  background-color: #5c98f1;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  &:hover {
+    background-color: #4583de;
+  }
+  &:active {
+    background-color: #2c6ac7;
+  }
+}
+
+.btn--inactive {
+  background-color: #d1d1d1;
+}
