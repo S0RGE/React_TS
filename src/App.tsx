@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.scss";
-import Input from "./atoms/inputs/input/Input";
-import MainButton from "./atoms/buttons/button/MainButton";
+import LoginForm from "./organisms/forms/LoginForm/LoginForm";
 
 function App() {
   const enterHandler = (title: string) => {
@@ -9,10 +8,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Test-React App with TypeScript</h1>
-      <Input onEnter={enterHandler} />
-      <MainButton />
+    <div className="App" >
+      <LoginForm />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.mainForm{
+    width: 500px;   
+    display: grid;
+   
+    margin: 71px auto;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 111px 111px;
+}
+
