@@ -5,6 +5,15 @@
   align-items: start;
 }
 
+.input__label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  color: #333333;
+  margin-top: 4px;
+}
+
 .main__input {
   border: 1px solid #b3cdf8;
   box-sizing: border-box;

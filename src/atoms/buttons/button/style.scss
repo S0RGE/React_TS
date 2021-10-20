@@ -12,6 +12,9 @@
   &:active {
     background-color: #2c6ac7;
   }
+  &:disabled {
+    background: #d1d1d1;
+  }
 }
 
 .btn--inactive {

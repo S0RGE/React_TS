@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import "./style.scss";
 
-const MainButton: React.FC = () => {
+interface IButtonProps {
+  disabledButton: boolean;
+}
+
+const MainButton: React.FC<IButtonProps> = (props) => {
 
   const [btnName, setBtnName] = useState<string>('Button')
 
   const clickHandler = () => {
-    console.log("Button click");
+    console.log("Button click", props.disabledButton);
   };
 
   return (
     <>
-      <button onClick={clickHandler} className="btn">
+      <button disabled={!props.disabledButton} onClick={clickHandler} className="btn">
         {btnName}
       </button>
     </>
