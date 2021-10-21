@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import MainButton from "../../../atoms/buttons/button/MainButton";
 import MainInput from "../../../atoms/inputs/input/MainInput";
+import Headers from "../../../atoms/typography/headers/Headers";
 
 const LoginForm: React.FC = () => {
   const [login, setLogin] = useState<string>("");
@@ -31,7 +32,7 @@ const LoginForm: React.FC = () => {
   };
 
   const inputEnter = () => {
-   console.log("On enter");
+    console.log("On enter");
   };
 
   const btnClick = () => {
@@ -41,8 +42,8 @@ const LoginForm: React.FC = () => {
 
   return (
     <>
-      <h1>Welcome to Chatty!</h1>
-      <h2>Please, authorize yourself</h2>
+      <Headers textType="h1-main">Welcome to Chatty!</Headers>
+      <Headers textType="h2-main">Please, authorize yourself</Headers>{" "}
       <form className="mainForm" onSubmit={submitHandler}>
         <MainInput
           inputType="text"
