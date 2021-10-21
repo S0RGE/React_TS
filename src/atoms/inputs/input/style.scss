@@ -2,7 +2,7 @@
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .input__label {
@@ -34,14 +34,13 @@
   &:focus {
     outline: none;
     border: 1px solid #5c98f1;
-  }
-  &:invalid {
-    border: 1px solid #fb6262;
-  }
+  } 
+}
+.red__border{
+  border: 1px solid #fb6262;
 }
 
 .input__error {
-  display: none;
   color: #fb6262;
   font-weight: 500;
   font-size: 13px;
@@ -50,15 +49,19 @@
 }
 
 .input__icon--error {
-  display: none;
+  background: url("./icon.svg") center/100% no-repeat;
   color: #fb6262;
-  border: 1px solid #fb6262;
-  border-radius: 50%;
-  font-size: 13px;
-  font-style: italic;
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   position: absolute;
-  right: 19px;
-  top: 19px;
+  right: 161px; // TODO: edit correct data
+  top: 42px; // TODO: edit correct data
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
 }

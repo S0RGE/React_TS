@@ -3,19 +3,24 @@ import "./style.scss";
 
 interface IButtonProps {
   disabledButton: boolean;
+  btnText: string;
+  onButtonClick(): void;
 }
 
 const MainButton: React.FC<IButtonProps> = (props) => {
-
-  const [btnName, setBtnName] = useState<string>('Button')
+  const [btnName, setBtnName] = useState<string>(props.btnText);
 
   const clickHandler = () => {
-    console.log("Button click", props.disabledButton);
+    props.onButtonClick();
   };
 
   return (
     <>
-      <button disabled={!props.disabledButton} onClick={clickHandler} className="btn">
+      <button
+        disabled={!props.disabledButton}
+        onClick={clickHandler}
+        className="btn"
+      >
         {btnName}
       </button>
     </>

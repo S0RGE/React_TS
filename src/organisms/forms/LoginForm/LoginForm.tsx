@@ -6,15 +6,15 @@ import MainInput from "../../../atoms/inputs/input/MainInput";
 const LoginForm: React.FC = () => {
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [passwordAlert, setPasswordAlert] = useState<string>("");
+  const [loginAlert, setLoginAlert] = useState<string>("");
   const [valid, setValid] = useState<boolean>(false);
 
   useEffect(() => {
     if (login.trim() && password.trim()) {
-      console.log(login," + ", password);
       setValid(true);
-    }
-    else{
-      setValid(false)
+    } else {
+      setValid(false);
     }
   }, [login, password]);
 
@@ -30,6 +30,15 @@ const LoginForm: React.FC = () => {
     event.preventDefault();
   };
 
+  const inputEnter = () => {
+   console.log("On enter");
+  };
+
+  const btnClick = () => {
+    console.log("Login:", login);
+    console.log("Password:", password);
+  };
+
   return (
     <>
       <h1>Welcome to Chatty!</h1>
@@ -37,19 +46,25 @@ const LoginForm: React.FC = () => {
       <form className="mainForm" onSubmit={submitHandler}>
         <MainInput
           inputType="text"
+          inputAlert={passwordAlert}
           onChange={enterLoginHandler}
-          onEnter={enterLoginHandler}
+          onEnter={inputEnter}
           inputPlaceholder="Input user name"
           inputLabel="User name"
         />
         <MainInput
           inputType="password"
-          onEnter={enterPasswordHandler}
+          onEnter={inputEnter}
+          inputAlert={loginAlert}
           onChange={enterPasswordHandler}
           inputPlaceholder="Input password"
           inputLabel="Password"
         />
-        <MainButton disabledButton={valid} />
+        <MainButton
+          onButtonClick={btnClick}
+          btnText="Log in"
+          disabledButton={valid}
+        />
       </form>
     </>
   );
