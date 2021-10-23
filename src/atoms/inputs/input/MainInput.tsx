@@ -18,7 +18,7 @@ const MainInput: React.FC<IInputProps> = ({
   inputAlert,
   inputType,  
 }) => {
-  const [title, setTitle] = useState<string>("");
+  const [title, setTitle] = useState<string>(""); //TODO: refactor this
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);

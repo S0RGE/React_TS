@@ -10,6 +10,8 @@ const LoginForm: React.FC = () => {
   const [loginAlert, setLoginAlert] = useState<string>("");
   const [valid, setValid] = useState<boolean>(true);
 
+  
+
   useEffect(() => {
     if (login.trim() && password.trim()) {
       setValid(true);
