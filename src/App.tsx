@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.scss";
-import LoginForm from "./organisms/forms/LoginForm/LoginForm";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
-  const enterHandler = (title: string) => {
-    console.log("From parent", title);
-  };
+  
 
   return (
     <div className="App" >
-      <LoginForm />
+      <LoginPage />
     </div>
   );
 }

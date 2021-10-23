@@ -1,27 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.scss";
 
 interface IButtonProps {
   disabledButton: boolean;
-  btnText: string;
   onButtonClick(): void;
 }
 
-const MainButton: React.FC<IButtonProps> = (props) => {
-  const [btnName, setBtnName] = useState<string>(props.btnText);
+const MainButton: React.FC<IButtonProps> = ({ onButtonClick, disabledButton, children }) => {  
 
-  const clickHandler = () => {
-    props.onButtonClick();
+  const handleClickButton = () => {
+    onButtonClick()
   };
 
   return (
     <>
       <button
-        disabled={!props.disabledButton}
-        onClick={clickHandler}
+        disabled={!disabledButton}
+        onClick={handleClickButton}
         className="btn"
       >
-        {btnName}
+        {children}
       </button>
     </>
   );
