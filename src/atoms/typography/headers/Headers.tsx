@@ -17,10 +17,10 @@ export enum HeadersVariants {
 }
 
 interface HeadersPropsType {
-  textType: HeadersVariants;
+  textType?: HeadersVariants;
 }
 
-const Headers: React.FC<HeadersPropsType> = ({ textType, children }) => {
+const Headers: React.FC<HeadersPropsType> = ({ textType = "text1_main", children }) => {
   return <div className={textType}>{children}</div>;
 };
 

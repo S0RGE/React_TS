@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./style.scss";
 
-interface IInputProps {
+interface InputPropsTypes {
   onEnter(): void;
   onChange(title: string): void;
-  inputPlaceholder: string;
-  inputLabel: string;
+  inputPlaceholder?: string;
+  inputLabel?: string;
   inputType: string;
-  inputAlert: string;
+  inputAlert?: string;
 }
 
-const MainInput: React.FC<IInputProps> = ({
+const MainInput: React.FC<InputPropsTypes> = ({
   onChange,
   onEnter,
   inputLabel,
@@ -18,10 +18,11 @@ const MainInput: React.FC<IInputProps> = ({
   inputAlert,
   inputType,  
 }) => {
-  const [title, setTitle] = useState<string>(""); //TODO: refactor this
+
+  const [inputValue, setInputValue] = useState<string>(""); //TODO: refactor this
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value);
+    setInputValue(event.target.value);
     onChange(event.target.value);
   };
 
@@ -40,7 +41,7 @@ const MainInput: React.FC<IInputProps> = ({
         <input
           className={inputAlert ? ("main__input red__border") : ("main__input")}
           placeholder={inputPlaceholder}
-          value={title}
+          value={inputValue}
           onChange={changeHandler}
           onKeyPress={keyPressHandler}
           type={inputType}

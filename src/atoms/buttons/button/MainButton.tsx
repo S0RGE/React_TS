@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 
 interface IButtonProps {
-  disabledButton: boolean;
+  disabledButton?: boolean;
   onButtonClick(): void;
 }
 
